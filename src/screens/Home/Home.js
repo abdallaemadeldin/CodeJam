@@ -12,7 +12,7 @@ const Home = () => {
         const album = photos.filter(e => e.albumId === item.id);
         const owner = users.filter(e => e.id === item.userId);
         return (
-            <TouchableOpacity style={card} onPress={() => navigate("AlbumDetails", { item })}>
+            <TouchableOpacity style={card} onPress={() => navigate("AlbumDetails", { album, item })}>
                 <Image source={{ uri: album[0].thumbnailUrl }} style={cardThumb} />
                 <View style={{ flex: 1 }}>
                     <Text style={cardTitle} numberOfLines={3}>{item.title}</Text>
