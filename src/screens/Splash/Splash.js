@@ -1,13 +1,15 @@
 import React, { memo } from 'react';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
+import { useSplash } from 'src/hooks';
 import style from './style';
 
 const Splash = () => {
-    const { container } = style();
+    const { container, logo } = style();
+    useSplash();
 
     return (
         <View style={container}>
-
+            <Image source={require('src/assets/logo.png')} style={logo} />
         </View>
     );
 }

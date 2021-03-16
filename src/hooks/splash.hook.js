@@ -6,7 +6,7 @@ export const useSplash = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            reset({ index: 0, routes: [{ name: "CharactersList" }] })
+            reset({ index: 0, routes: [{ name: "Home" }] })
         }, 2000);
     }, []);
 }
