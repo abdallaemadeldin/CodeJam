@@ -46,5 +46,5 @@ export const useHome = () => {
             });
     }
 
-    return { albums, users, photos, loading, visible, filterUser, filterAlbums, setFilterUser, setVisible };
+    return { albums, users, photos, loading, visible, filterUser, filterAlbums, setFilterUser, setVisible, navigate };
 }

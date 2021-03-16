@@ -6,13 +6,13 @@ import style from './style';
 
 const Home = () => {
     const { container, toolbar, toolbarTitle, indicator, card, contentContainerStyle, cardThumb, cardTitle, cardInfo, filterBtn, bottomSheetHolder, userCard, hint, userName, selectedUsername } = style();
-    const { albums, users, photos, loading, visible, filterAlbums, filterUser, setFilterUser, setVisible } = useHome();
+    const { albums, users, photos, loading, visible, filterAlbums, filterUser, setFilterUser, setVisible, navigate } = useHome();
 
     const renderItem = ({ item }) => {
         const album = photos.filter(e => e.albumId === item.id);
         const owner = users.filter(e => e.id === item.userId);
         return (
-            <TouchableOpacity style={card}>
+            <TouchableOpacity style={card} onPress={() => navigate("AlbumDetails", { item })}>
                 <Image source={{ uri: album[0].thumbnailUrl }} style={cardThumb} />
                 <View style={{ flex: 1 }}>
                     <Text style={cardTitle} numberOfLines={3}>{item.title}</Text>
