@@ -1,16 +1,24 @@
-import * as React from "react";
-import { View, Text } from "react-native";
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ */
 
-export default function App() {
+import React, { useEffect } from 'react';
+import { I18nManager, StatusBar } from 'react-native';
+import WindowStack from './src/lib/windowStack';
+import 'react-native-gesture-handler';
+
+const App = () => {
+  useEffect(() => { I18nManager.allowRTL(false); }, []);
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Universal React with Expo</Text>
-    </View>
+    <>
+      <StatusBar backgroundColor="#000" barStyle="light-content" animated />
+      <WindowStack />
+    </>
   );
-}
+};
+
+export default App;
